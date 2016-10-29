@@ -18,4 +18,10 @@ export default class NewCommand extends Command {
     blueprint.generate(this.parseArgs.call(blueprint, argTokens));
   }
 
+  printHelp() {
+    super.printHelp();
+    let blueprint = new AppBlueprint(path.join(__dirname, '..', 'blueprints', 'app'));
+    blueprint.printHelp();
+  }
+
 }

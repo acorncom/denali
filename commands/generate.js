@@ -48,6 +48,10 @@ export default class GenerateCommand extends Command {
     blueprints.forEach((blueprintName) => {
       const Blueprint = require(`../blueprints/${ blueprintName }`).default;
       ui.info(`  ${ padEnd(blueprintName, pad) }  ${ Blueprint.description }`);
+
+      console.log(Blueprint);
+      // blueprint = new 
+      // Blueprint.printHelp();
     });
   }
 

@@ -24,4 +24,10 @@ export default class AddonCommand extends Command {
     blueprint.generate(this.parseArgs.call(blueprint, argTokens));
   }
 
+  printHelp() {
+    let blueprint = new AddonBlueprint(path.join(__dirname, '..', 'blueprints', 'addon'));
+    this.flags = blueprint.flags;
+    super.printHelp();
+  }
+
 }
